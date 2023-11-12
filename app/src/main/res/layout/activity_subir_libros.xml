@@ -11,7 +11,7 @@
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -23,7 +23,9 @@
             android:layout_height="wrap_content"
             android:hint="Título del recurso"
             android:padding="12dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editTextAutor" />/>
 
         <!-- Campo de autor -->
         <EditText
@@ -31,7 +33,9 @@
             android:layout_height="wrap_content"
             android:hint="Autor"
             android:padding="12dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTitulo"
+            app:layout_constraintBottom_toTopOf="@+id/spinnerCategoria"/>
 
         <!-- Selección de categoría -->
         <Spinner
@@ -41,22 +45,26 @@
 
         <!-- Botón para seleccionar archivo -->
         <Button
+            android:id="@+id/leeccionar-archivo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleccionar Archivo"
+            android:layout_marginBottom="16dp"
             android:background="@color/black"
-            android:textColor="@android:color/white"
             android:padding="12dp"
-            android:layout_marginBottom="16dp" />
+            android:text="Seleccionar Archivo"
+            android:textColor="@android:color/white" />
 
         <!-- Botón para subir recurso -->
         <Button
+            android:id="@+id/SubirRecurso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Subir Recurso"
             android:background="@color/black"
-            android:textColor="@android:color/white"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:text="Subir Recurso"
+            android:textColor="@android:color/white" />
+
+
 
     </LinearLayout>
 
